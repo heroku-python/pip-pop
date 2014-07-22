@@ -1,5 +1,5 @@
-pip-pop: tools for managing requirements files
-==============================================
+pip-pop
+=======
 
 Working with lots of ``requirements.txt`` files can be a bit annoying.
 Have no fear, **pip-pop** is here!
