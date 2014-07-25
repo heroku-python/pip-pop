@@ -16,8 +16,8 @@ from pkg_resources import parse_requirements
 
 
 # TODO: ignore lines
-IGNORABLE_LINES = '#', '-r'
-VERSION_OPERATORS = ['==', '>=', '<=', '>', '<', ',']
+IGNORABLE_LINES = ('#', '-r')
+VERSION_OPERATORS = ('==', '>=', '<=', '>', '<', ',')
 
 def split(s):
     for operator in VERSION_OPERATORS:
