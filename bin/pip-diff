@@ -25,11 +25,7 @@ def split(s):
 
     return s.split('!')
 
-
-# TODO: consider package upgrades.
-
 class Requirements(object):
-    """docstring for Requirements"""
     def __init__(self, reqfile=None):
         super(Requirements, self).__init__()
         self.path = reqfile
@@ -59,11 +55,6 @@ class Requirements(object):
             for requirement in parse_requirements(data):
                 self.requirements.append(requirement)
 
-
-        # assert that the given file exists
-        # parse the file
-        # insert those entries into self.declarations
-        pass
 
     def diff(self, requirements, ignore_versions=False):
         r1 = self
@@ -101,7 +92,6 @@ class Requirements(object):
 
 
 def diff(r1, r2, include_fresh=False, include_stale=False):
-    # assert that r1 and r2 are files.
 
     include_versions = True if include_stale else False
 
