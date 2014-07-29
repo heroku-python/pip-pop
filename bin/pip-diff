@@ -14,16 +14,6 @@ import os
 from docopt import docopt
 from pip.req import parse_requirements
 
-# TODO: ignore lines
-IGNORABLE_LINES = ('#', '-r')
-VERSION_OPERATORS = ('==', '>=', '<=', '>', '<', ',')
-
-def split(s):
-    for operator in VERSION_OPERATORS:
-        s = s.replace(operator, '!')
-
-    return s.split('!')
-
 class Requirements(object):
     def __init__(self, reqfile=None):
         super(Requirements, self).__init__()
