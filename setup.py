@@ -14,7 +14,7 @@ setup(
     author_email='me@kennethreitz.org',
     description=__doc__.strip('\n'),
     #packages=[],
-    scripts=['bin/pip-diff', 'bin/pip-flatten'],
+    scripts=['bin/pip-diff', 'bin/pip-grep'],
     #include_package_data=True,
     zip_safe=False,
     platforms='any',
