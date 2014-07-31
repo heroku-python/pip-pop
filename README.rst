@@ -9,17 +9,17 @@ Have no fear, **pip-pop** is here!
 Planned Commands
 ----------------
 
-``$ pip-diff [--fresh | --stale] <reqfile> <reqfile> [output]``
+``$ pip-diff [--fresh | --stale] <reqfile> <reqfile>``
 
 Generates a diff between two given requirements files. Lists either stale or fresh packages.
 
-``$ pip-flatten [--unsorted] <reqfile> [output]``
+``$ pip-grep <reqfile> <package>...``
 
-Takes a single requirements file, and expands it. Essential when working with included files.
-Will potentially support blacklisting modules (wsgiref, distribute, setuptools).
+Takes a requirements file, and searches for the speficied package (or packages) within it.
+Essential when working with included files.
 
 
 Possible Future Commands
 ------------------------
 
-- ``pip-where``
+- Install with blacklisting support (wsgiref, distribute, setuptools).
