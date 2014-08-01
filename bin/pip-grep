@@ -43,12 +43,15 @@ def grep(reqfile, packages):
         exit(os.EX_NOINPUT)
 
     for requirement in r.requirements:
-        if requirement.req.project_name in packages:
-            print 'Package {} found!'.format(requirement.req.project_name)
-            exit(0)
 
-        print 'Not found.'.format(requirement.req.project_name)
-        exit(1)
+        if requirement.req:
+
+            if requirement.req.project_name in packages:
+                print 'Package {} found!'.format(requirement.req.project_name)
+                exit(0)
+
+    print 'Not found.'.format(requirement.req.project_name)
+    exit(1)
 
 
 def main():
