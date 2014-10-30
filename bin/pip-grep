@@ -2,10 +2,12 @@
 # -*- coding: utf-8 -*-
 
 """Usage:
-  pip-grep [-s] <reqfile> <package>...
+  pip-grep [-sp] <reqfile> <package>...
 
 Options:
-  -h --help     Show this screen.
+  -h --help         Show this screen.
+  -s --silent       Suppress output.
+  -p --print-req    If found, print the requirement.
 """
 import os
 from docopt import docopt
@@ -35,16 +37,14 @@ class Requirements(object):
             self.requirements.append(requirement)
 
 
-
-
-def grep(reqfile, packages, silent=False):
+def grep(reqfile, packages, silent=False, print_req=False):
 
     try:
         r = Requirements(reqfile)
     except ValueError:
 
         if not silent:
-            print('There was a problem loading the given requirement file.')
+            print('There was a problem loading the given requirements file.')
 
         exit(os.EX_NOINPUT)
 
@@ -54,13 +54,14 @@ def grep(reqfile, packages, silent=False):
 
             if requirement.req.project_name in packages:
 
-                if not silent:
+                if print_req:
+                    print(str(requirement.req))
+                elif not silent:
                     print('Package {} found!'.format(requirement.req.project_name))
-
                 exit(0)
 
     if not silent:
-        print('Not found.'.format(requirement.req.project_name))
+        print('Not found.')
 
     exit(1)
 
@@ -68,11 +69,10 @@ def grep(reqfile, packages, silent=False):
 def main():
     args = docopt(__doc__, version='pip-grep')
 
-    kwargs = {'reqfile': args['<reqfile>'], 'packages': args['<package>'], 'silent': args['-s']}
-
+    kwargs = {'reqfile': args['<reqfile>'], 'packages': args['<package>'],
+              'silent': args['--silent'], 'print_req': args['--print-req']}
 
     grep(**kwargs)
-
 
 
 if __name__ == '__main__':
