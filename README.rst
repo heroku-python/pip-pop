@@ -15,7 +15,7 @@ Generates a diff between two given requirements files. Lists either stale or fre
 
 ``$ pip-grep <reqfile> <package>...``
 
-Takes a requirements file, and searches for the speficied package (or packages) within it.
+Takes a requirements file, and searches for the specified package (or packages) within it.
 Essential when working with included files.
 
 
