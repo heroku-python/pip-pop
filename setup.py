@@ -19,6 +19,7 @@ setup(
     zip_safe=False,
     platforms='any',
     install_requires=['docopt', 'pip>=1.5.0'],
+    tests_require=['tox'],
     classifiers=[
         # As from https://pypi.python.org/pypi?%3Aaction=list_classifiers
         #'Development Status :: 1 - Planning',

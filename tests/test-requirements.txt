@@ -1,0 +1,3 @@
+cffi
+django
+requests[security]

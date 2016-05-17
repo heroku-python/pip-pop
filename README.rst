@@ -23,3 +23,11 @@ Possible Future Commands
 ------------------------
 
 - Install with blacklisting support (wsgiref, distribute, setuptools).
+
+Development
+-----------
+
+To run the tests:
+
+1. ``pip install -r requirements.txt``
+2. ``tox``
