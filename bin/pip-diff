@@ -18,6 +18,7 @@ from pip._vendor.requests import session
 
 requests = session()
 
+
 class Requirements(object):
     def __init__(self, reqfile=None):
         super(Requirements, self).__init__()
@@ -31,7 +32,6 @@ class Requirements(object):
         return '<Requirements \'{}\'>'.format(self.path)
 
     def load(self, reqfile):
-
         if not os.path.exists(reqfile):
             raise ValueError('The given requirements file does not exist.')
 
@@ -73,11 +73,7 @@ class Requirements(object):
         return results
 
 
-
-
-
 def diff(r1, r2, include_fresh=False, include_stale=False, excludes=None):
-
     include_versions = True if include_stale else False
     excludes = excludes if len(excludes) else []
 
@@ -99,7 +95,6 @@ def diff(r1, r2, include_fresh=False, include_stale=False, excludes=None):
             print(line.project_name if include_versions else line)
 
 
-
 def main():
     args = docopt(__doc__, version='pip-diff')
 
@@ -112,7 +107,6 @@ def main():
     }
 
     diff(**kwargs)
-
 
 
 if __name__ == '__main__':
