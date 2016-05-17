@@ -1,6 +1,9 @@
 pip-pop
 =======
 
+.. image:: https://travis-ci.org/kennethreitz/pip-pop.svg?branch=master
+    :target: https://travis-ci.org/kennethreitz/pip-pop
+
 Working with lots of ``requirements.txt`` files can be a bit annoying.
 Have no fear, **pip-pop** is here!
 
