@@ -1,6 +1,9 @@
 pip-pop
 =======
 
+.. image:: https://travis-ci.org/kennethreitz/pip-pop.svg?branch=master
+    :target: https://travis-ci.org/kennethreitz/pip-pop
+
 Working with lots of ``requirements.txt`` files can be a bit annoying.
 Have no fear, **pip-pop** is here!
 
@@ -23,3 +26,11 @@ Possible Future Commands
 ------------------------
 
 - Install with blacklisting support (wsgiref, distribute, setuptools).
+
+Development
+-----------
+
+To run the tests:
+
+1. ``pip install -r requirements.txt``
+2. ``tox``
