@@ -9,8 +9,8 @@ Options:
 """
 import os
 from docopt import docopt
-from pip.req import parse_requirements
-from pip.index import PackageFinder
+from pip._internal.req import parse_requirements
+from pip._internal.index import PackageFinder
 from pip._vendor.requests import session
 
 requests = session()
@@ -44,9 +44,9 @@ class Requirements(object):
 def grep(reqfile, packages, silent=False):
     try:
         r = Requirements(reqfile)
-    except ValueError:
+    except ValueError as msg:
         if not silent:
-            print('There was a problem loading the given requirement file.')
+            print('There was a problem loading the given requirement file.Error message: {msg}'.format(msg=msg))
         exit(os.EX_NOINPUT)
 
     for req in r.requirements:
