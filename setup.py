@@ -1,7 +1,6 @@
 """
 pip-pop manages your requirements files.
 """
-import sys
 from setuptools import setup
 
 
